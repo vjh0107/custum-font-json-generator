@@ -19,13 +19,10 @@ def write_json(type: str, file_dir: str, ascent: int, height: int, chars: str):
 
 
 if __name__ == '__main__':
-    index = 30000
+    index = "e127"
     amount = 20
 
-    c = "{}".format(hex(index))[2:]
-
     for i in range(amount):
-        c = "{}".format(hex(index+i))[2:]
+        c = "{}".format(hex(int(index, 16) + i))[2:]
         unicode = rf"\u{c}"
-        print(unicode)
-        write_json("bitmap", "skill:font/assassin/blasting/1.png", 41, 160, unicode)
+        write_json("bitmap", f"skill:font/arcmage/buff1/{i + 1}.png", 41, 160, unicode)
